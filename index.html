@@ -42,7 +42,7 @@
         <input name="contact" id="contactChoice3" class="radio-input" type="radio">
         <div class="radio-design"></div>
         <div class="label-text">Drip 3</div>
-      </label>
+      </label
     </div>
   </model-viewer>
 
@@ -55,23 +55,7 @@
   </div>
 
   <script src="script.js"></script>
-  <script>
-    const modelViewerVariants = document.querySelector("model-viewer#shoe");
-
-    document.getElementById("contactChoice1").addEventListener("click", function () {
-      modelViewerVariants.src = "models/DRIP1.glb";
-    }, false);
-
-    document.getElementById("contactChoice2").addEventListener("click", function () {
-      modelViewerVariants.src = "models/DRIP2.glb";
-    }, false);
-
-    document.getElementById("contactChoice3").addEventListener("click", function () {
-      modelViewerVariants.src = "models/DRIP3.glb";
-    }, false);
-
-
-  </script>
+  <script src="modelSwapper.js"></script>
   <!-- Loads <model-viewer> for browsers: -->
   <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
 </body>
