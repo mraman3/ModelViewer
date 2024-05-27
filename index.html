@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Cubs Are Alive</title>
+  <meta charset="utf-8">
+  <meta name="cubs" content="Cubemup">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link type="text/css" href="./styles.css" rel="stylesheet" />
+  <link rel="icon" type="image/x-icon" href="Favi.png">
+</head>
+
+<body>
+  <!-- <model-viewer> HTML element -->
+
+  <model-viewer id="shoe" src="models/BASE.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls
+    tone-mapping="commerce" poster="Heading.png" shadow-intensity="1" autoplay environment-image="pillars_1k.hdr"
+    scale="0.01 0.01 0.01">
+
+    <div class="progress-bar hide" slot="progress-bar">
+      <div class="update-bar"></div>
+    </div>
+    <button slot="ar-button" id="ar-button">
+      View in your space
+    </button>
+    <div id="ar-prompt">
+      <img src="ar_hand_prompt.png">
+    </div>
+
+    <div class="radio-input-wrapper">
+      <label class="label">
+        <input name="contact" id="contactChoice1" class="radio-input" type="radio">
+        <div class="radio-design"></div>
+        <div class="label-text">Drip 1</div>
+      </label>
+      <label class="label">
+        <input name="contact" id="contactChoice2" class="radio-input" type="radio">
+        <div class="radio-design"></div>
+        <div class="label-text">Drip 2</div>
+      </label>
+      <label class="label">
+        <input name="contact" id="contactChoice3" class="radio-input" type="radio">
+        <div class="radio-design"></div>
+        <div class="label-text">Drip 3</div>
+      </label>
+    </div>
+  </model-viewer>
+
+  <div class="ar-button" id="desktop">
+    <button class="button-35" role="button" onclick="on()">VIEW IN AR</button>
+  </div>
+
+  <div id="overlay" onclick="off()">
+    <img class="qrPng" src="QRCODE.png" width="362" height="450">
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    const modelViewerVariants = document.querySelector("model-viewer#shoe");
+
+    document.getElementById("contactChoice1").addEventListener("click", function () {
+      modelViewerVariants.src = "models/DRIP1.glb";
+    }, false);
+
+    document.getElementById("contactChoice2").addEventListener("click", function () {
+      modelViewerVariants.src = "models/DRIP2.glb";
+    }, false);
+
+    document.getElementById("contactChoice3").addEventListener("click", function () {
+      modelViewerVariants.src = "models/DRIP3.glb";
+    }, false);
+
+
+  </script>
+  <!-- Loads <model-viewer> for browsers: -->
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+</body>
+
+</html>
